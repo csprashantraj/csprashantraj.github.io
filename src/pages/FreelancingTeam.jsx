@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { teamMembers, services } from '../data/teamMembers';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaBrain, FaServer, FaPalette, FaDatabase, FaCloud, FaUsers, FaTasks, FaUserTie } from 'react-icons/fa';
 
@@ -16,6 +16,8 @@ const iconMap = {
 };
 
 const FreelancingTeam = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -197,20 +199,12 @@ const FreelancingTeam = () => {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               We're always excited to collaborate on innovative projects. Let's discuss how we can help bring your ideas to life.
             </p>
-            <Link
-              to="/#contact"
-              onClick={() => {
-                setTimeout(() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }, 100);
-              }}
+            <button
+              onClick={() => navigate('/#contact')}
               className="inline-block px-8 py-3 bg-primary text-dark-bg font-semibold rounded-lg hover:bg-primary-dark transition-all transform hover:scale-105"
             >
               Contact Us
-            </Link>
+            </button>
           </motion.div>
         </div>
       </section>

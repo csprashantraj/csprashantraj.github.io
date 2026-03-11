@@ -1,38 +1,54 @@
+import profileImagePrashant from '../assets/Prashant_portfolio.jpeg';
+import profileImageAshita from '../assets/ashita_portfolio.jpeg';
+
 export const teamMembers = [
-  {
+    {
     id: 1,
     name: "Prashant Raj",
     role: "Full Stack Developer",
     bio: "Computer Science undergraduate at NIT Warangal with experience at Amazon and Microsoft. Passionate about building scalable web applications and AI solutions.",
-    photoUrl: "src/assets/Prashant_portfolio.jpeg",
+    photoUrl: profileImagePrashant,
     skills: ["ReactJS", "NodeJS", "Python", "Flask", "AI/ML", "System Design", "Cloud Deployment", "Competitive Programming", "Database", "UI/UX", "API Development", "Version Control", "Agile Methodologies"],
     careerPath: [
-      { year: "2022", title: "Started B.Tech CSE at NIT Warangal" },
-      { year: "2025", title: "Software Engineer Intern at Microsoft" },
-      { year: "2026", title: "Software Dev Engineer Intern at Amazon" },
-      { year: "2026", title: "Started Freelancing" }
+        { year: "2022", title: "Started B.Tech CSE at NIT Warangal" },
+        { year: "2025", title: "Software Engineer Intern at Microsoft" },
+        { year: "2026", title: "Software Dev Engineer Intern at Amazon" },
+        { year: "2026", title: "Started Freelancing" }
     ],
     github: "https://github.com/csprashantraj",
     linkedin: "https://linkedin.com/in/csprashantraj",
     email: "prashant77399@gmail.com"
-  },
-//   {
-//     id: 2,
-//     name: "Ashita Goyal",
-//     role: "Full Stack Developer & Team Lead",
-//     bio: "Computer Science undergraduate at NIT Warangal with experience at Amazon and Microsoft. Passionate about building scalable web applications and AI solutions.",
-//     photoUrl: "src/assets/Prashant_portfolio.jpeg",
-//     skills: ["ReactJS", "NodeJS", "Python", "Flask", "Database", "UI/UX", "API Development", "Version Control", "Agile Methodologies"],
-//     careerPath: [
-//       { year: "2022", title: "Started B.Tech CSE at NIT Warangal" },
-//       { year: "2025", title: "Software Engineer Intern at Microsoft" },
-//       { year: "2026", title: "Software Dev Engineer Intern at Amazon" },
-//       { year: "2026", title: "Started Freelancing" }
-//     ],
-//     github: "https://github.com/csprashantraj",
-//     linkedin: "https://linkedin.com/in/csprashantraj",
-//     email: "prashant77399@gmail.com"
-//   }
+    },
+    {
+    id: 2,
+    name: "Ashita Goyal",
+    role: "Software Development Engineer & Full Stack Developer",
+    bio: "Computer Science undergraduate at NIT Warangal and Software Development Engineer at Okta. Experienced in building scalable web applications, APIs, and intelligent systems. Passionate about full-stack development, cybersecurity, and modern backend architectures.",
+    
+    photoUrl: profileImageAshita,
+
+    skills: [
+        "Java",
+        "ReactJS",
+        "NodeJS",
+        "Flask",
+        "MongoDB",
+        "MySQL",
+        "PostgreSQL",
+        "API Development",
+    ],
+
+    careerPath: [
+        { year: "2022", title: "Started B.Tech CSE at NIT Warangal" },
+        { year: "2025", title: "Programming Intern at Programiz" },
+        { year: "2026", title: "Software Development Engineer at Okta" },
+        { year: "2026", title: "Started Freelancing (Web Development & APIs)" }
+    ],
+
+    github: "https://github.com/Ashita7890",
+    linkedin: "https://www.linkedin.com/in/ag0712/",
+    email: "ashugo9848@gmail.com"
+    }
   // Add more team members here following the same structure
   // Example:
   // {

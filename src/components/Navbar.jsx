@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +27,24 @@ const Navbar = () => {
     { name: 'Contact', path: '/', hash: '#contact' },
   ];
 
-  const handleNavClick = (link) => {
+  const handleNavClick = (e, link) => {
+    e.preventDefault();
     setIsOpen(false);
-    if (link.hash && location.pathname === '/') {
-      setTimeout(() => {
-        const element = document.querySelector(link.hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+
+    // If navigating to a hash on the same page
+    if (link.hash && location.pathname === link.path) {
+      const element = document.querySelector(link.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } 
+    // If navigating to a different page with hash
+    else if (link.hash && location.pathname !== link.path) {
+      navigate(link.path + link.hash);
+    }
+    // If navigating to a page without hash
+    else {
+      navigate(link.path);
     }
   };
 
@@ -57,16 +67,16 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.path}
-                onClick={() => handleNavClick(link)}
+                href={link.path + (link.hash || '')}
+                onClick={(e) => handleNavClick(e, link)}
                 className={`text-gray-300 hover:text-primary transition-colors ${
                   location.pathname === link.path && !link.hash ? 'text-primary' : ''
                 }`}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -88,14 +98,14 @@ const Navbar = () => {
             className="md:hidden bg-dark-card rounded-lg mt-2 py-4"
           >
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.path}
-                onClick={() => handleNavClick(link)}
+                href={link.path + (link.hash || '')}
+                onClick={(e) => handleNavClick(e, link)}
                 className="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark-lighter transition-colors"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </motion.div>
         )}

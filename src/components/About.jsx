@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaDownload, FaTrophy, FaCode, FaStar } from 'react-icons/fa';
+import profileImage from '../assets/Prashant_portfolio.jpeg';
 
 const About = () => {
   const stats = [
@@ -28,7 +29,7 @@ const About = () => {
               <div className="relative">
                 <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary animate-pulse-glow">
                   <img
-                    src="src/assets/Prashant_portfolio.jpeg"
+                    src={profileImage}
                     alt="Prashant Raj"
                     className="w-full h-full object-cover"
                   />

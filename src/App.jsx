@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import FreelancingTeam from './pages/FreelancingTeam';
 
@@ -41,6 +42,7 @@ function App() {
             exit={{ opacity: 0 }}
             className="min-h-screen bg-dark-bg text-white"
           >
+            <ScrollToTop />
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
